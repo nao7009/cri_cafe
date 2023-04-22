@@ -1,0 +1,54 @@
+/*main.scss*/
+
+/******************************
+* 初期設定
+******************************/
+body{
+    margin: 0;
+    padding: 0;
+    color:#060606;
+    font-size: 16px;
+    background-color: $mainColor;
+    font-family: $fontType;
+}
+
+main{
+    padding: 40px 15px 15px;
+    background-color: $subColor;
+}
+
+a{
+    text-decoration: none;
+    color: #060606;
+}
+
+p, ul, li, th{
+    margin: 10px;
+    padding: 10px;
+    line-height: 1.2em;
+    font-family: $fontType2;
+    @include mq('max','md') {
+        margin: 5px;
+        padding: 5px;
+    }
+}
+
+li{
+    list-style-type: none;
+}
+
+h1, h2, h3{
+    font-family: $fontType;
+}
+
+h1{
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    @include mq('max','md') {
+        margin: 10px;
+        padding: 10px;
+        font-size: 20px;
+    }
+}

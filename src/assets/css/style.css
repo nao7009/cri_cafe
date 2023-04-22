@@ -1,0 +1,929 @@
+@charset "UTF-8";
+/* style.scss */
+/* _variables.scss */
+@import url("https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap");
+/******************************
+* 初期設定
+******************************/
+body {
+  margin: 10px;
+  padding: 10px;
+  color: #060606;
+  font-size: 16px;
+  background-color: #EBE8D3; }
+  @media screen and (max-width: 768px) {
+    body {
+      margin: 5px;
+      padding: 5px; } }
+
+header, footer {
+  background-color: #FDEDCF; }
+
+main {
+  background-color: #fdf5e6; }
+
+a {
+  text-decoration: none;
+  color: #060606; }
+
+p {
+  margin: 10px;
+  padding: 10px;
+  font-family: "Shippori Mincho B1", serif;
+  line-height: 2em; }
+  @media screen and (max-width: 768px) {
+    p {
+      margin: 5px;
+      padding: 5px; } }
+
+header, footer, main, section, div, li, dt, dd {
+  margin: 10px;
+  padding: 10px;
+  font-family: "Slabo 27px", serif; }
+  @media screen and (max-width: 768px) {
+    header, footer, main, section, div, li, dt, dd {
+      margin: 5px;
+      padding: 5px; } }
+
+/******************************
+ header
+******************************/
+.header__contents {
+  width: 85%;
+  margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    .header__contents {
+      width: 100%; } }
+  .header__contents--logo {
+    margin: 0 auto;
+    padding: 5px;
+    width: 140px;
+    height: 140px; }
+    @media screen and (max-width: 768px) {
+      .header__contents--logo {
+        width: 70px;
+        height: 70px; } }
+    .header__contents--logo a {
+      display: block;
+      margin: 5px;
+      padding: 5px; }
+      .header__contents--logo a img {
+        width: 100%; }
+  .header__contents--menu {
+    width: 100%; }
+    .header__contents--menu ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+      @media screen and (max-width: 768px) {
+        .header__contents--menu ul {
+          margin: 5px;
+          padding: 5px; } }
+      .header__contents--menu ul li {
+        font-size: 25px; }
+        @media screen and (max-width: 768px) {
+          .header__contents--menu ul li {
+            font-size: 15px; } }
+        .header__contents--menu ul li a {
+          margin: 5px;
+          padding: 5px;
+          position: relative;
+          display: inline-block;
+          text-decoration: none; }
+          .header__contents--menu ul li a:after {
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #666;
+            -webkit-transform: scale(0, 1);
+                    transform: scale(0, 1);
+            -webkit-transform-origin: center top;
+                    transform-origin: center top;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s; }
+          .header__contents--menu ul li a:hover:after {
+            -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1); }
+  .header__contents--slide {
+    width: 80%;
+    margin: 20px auto; }
+    @media screen and (max-width: 768px) {
+      .header__contents--slide {
+        width: 100%;
+        margin: 10px auto; } }
+    .header__contents--slide img {
+      height: auto;
+      width: 100%; }
+    .header__contents--slide .slick-slide {
+      margin: 0px 20px;
+      -webkit-transition: all ease-in-out .3s;
+      transition: all ease-in-out .3s;
+      opacity: .2; }
+      @media screen and (max-width: 768px) {
+        .header__contents--slide .slick-slide {
+          margin: 0px 10px; } }
+    .header__contents--slide .slick-prev:before,
+    .header__contents--slide .slick-next:before {
+      color: black; }
+    .header__contents--slide .slick-active {
+      opacity: .5; }
+    .header__contents--slide .slick-current {
+      opacity: 1; }
+
+/**********************************
+ index.html
+**********************************/
+.main h1 {
+  margin: 15px;
+  padding: 15px;
+  font-size: 30px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .main h1 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px; } }
+
+.main__contents {
+  width: 85%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  @media screen and (max-width: 768px) {
+    .main__contents {
+      width: 100%;
+      margin: 0 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .main__contents:first-child {
+    border-bottom: 1px solid #666; }
+  .main__contents--image {
+    width: 500px;
+    height: auto; }
+    @media screen and (max-width: 768px) {
+      .main__contents--image {
+        width: 350px;
+        margin: 0 auto; } }
+    .main__contents--image img {
+      width: 100%; }
+    .main__contents--image .slider {
+      margin: 50px auto 0; }
+      @media screen and (max-width: 768px) {
+        .main__contents--image .slider {
+          margin: 25px auto 0; } }
+      .main__contents--image .slider img {
+        height: auto;
+        width: 100%; }
+      .main__contents--image .slider .slick-slide {
+        margin: 0px 20px;
+        -webkit-transition: all ease-in-out .3s;
+        transition: all ease-in-out .3s;
+        opacity: .2; }
+        @media screen and (max-width: 768px) {
+          .main__contents--image .slider .slick-slide {
+            margin: 0px 10px; } }
+      .main__contents--image .slider .slick-prev:before,
+      .main__contents--image .slider .slick-next:before {
+        color: black; }
+      .main__contents--image .slider .slick-active {
+        opacity: .5; }
+      .main__contents--image .slider .slick-current {
+        opacity: 1; }
+  .main__contents--text {
+    width: 500px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .main__contents--text {
+        width: 100%;
+        margin: 0 auto; } }
+    .main__contents--text h2 {
+      margin: 15px;
+      padding: 15px;
+      font-size: 25px; }
+      @media screen and (max-width: 768px) {
+        .main__contents--text h2 {
+          margin: 5px;
+          padding: 5px;
+          font-size: 15px; } }
+    .main__contents--text p {
+      font-size: 15px;
+      margin: 10px;
+      padding: 10px; }
+      @media screen and (max-width: 768px) {
+        .main__contents--text p {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px; } }
+    .main__contents--text a {
+      margin-top: 60px;
+      font-size: 20px;
+      position: relative;
+      display: inline-block; }
+      @media screen and (max-width: 768px) {
+        .main__contents--text a {
+          margin-top: 30px;
+          font-size: 10px; } }
+      .main__contents--text a:after {
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #666;
+        -webkit-transform: scale(0, 1);
+                transform: scale(0, 1);
+        -webkit-transform-origin: center top;
+                transform-origin: center top;
+        -webkit-transition: -webkit-transform .3s;
+        transition: -webkit-transform .3s;
+        transition: transform .3s;
+        transition: transform .3s, -webkit-transform .3s; }
+      .main__contents--text a:hover:after {
+        -webkit-transform: scale(1, 1);
+                transform: scale(1, 1); }
+    .main__contents--text ul li {
+      margin: 5px;
+      margin-left: 40px;
+      padding: 5px;
+      font-size: 15px;
+      text-align: left; }
+      @media screen and (max-width: 768px) {
+        .main__contents--text ul li {
+          margin-left: 20px;
+          font-size: 10px;
+          text-align: center; } }
+    @media screen and (max-width: 768px) {
+      .main__contents--text img {
+        width: 40px;
+        height: 40px; } }
+  .main__contents--reservation {
+    margin: 0 auto;
+    color: #666; }
+    .main__contents--reservation p {
+      text-align: center; }
+    .main__contents--reservation #header {
+      text-align: center;
+      font-size: 24px;
+      width: 100%;
+      margin: 1rem 0 0; }
+      @media screen and (max-width: 768px) {
+        .main__contents--reservation #header {
+          font-size: 12px; } }
+    .main__contents--reservation #calender {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto; }
+    .main__contents--reservation table {
+      outline: 2px solid #ddd;
+      border-collapse: collapse;
+      width: 100%; }
+    .main__contents--reservation th {
+      color: #000; }
+    .main__contents--reservation th, .main__contents--reservation td {
+      outline: 1px solid #ddd;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center; }
+      @media screen and (max-width: 768px) {
+        .main__contents--reservation th, .main__contents--reservation td {
+          padding-top: 5px;
+          padding-bottom: 5px; } }
+    .main__contents--reservation td:first-child {
+      color: #f00; }
+    .main__contents--reservation td:last-child {
+      color: #00f; }
+    .main__contents--reservation td.holiday {
+      color: #f00; }
+    .main__contents--reservation td.disabled {
+      color: #ccc; }
+    .main__contents--reservation td.today {
+      background-color: #D65E72;
+      color: #fff; }
+    .main__contents--reservation #next-prev-button {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+      .main__contents--reservation #next-prev-button button {
+        cursor: pointer;
+        background: #B78D4A;
+        color: #fff;
+        border: 1px solid #B78D4A;
+        border-radius: 4px;
+        font-size: 1rem;
+        padding: 10px 40px; }
+        @media screen and (max-width: 768px) {
+          .main__contents--reservation #next-prev-button button {
+            padding: 5px 20px; } }
+      .main__contents--reservation #next-prev-button :hover {
+        background-color: #D4BB92;
+        border-color: #D4BB92; }
+    .main__contents--reservation #prev {
+      float: left; }
+    .main__contents--reservation #next {
+      float: right; }
+    @media screen and (max-width: 768px) {
+      .main__contents--reservation #form {
+        width: 100%;
+        margin: 0 auto; } }
+    .main__contents--reservation #form table {
+      outline: none;
+      border: none; }
+      .main__contents--reservation #form table tr td {
+        outline: none;
+        border: none;
+        margin: 10px;
+        padding: 10px;
+        font-size: 15px;
+        color: #000;
+        text-align: left; }
+        @media screen and (max-width: 768px) {
+          .main__contents--reservation #form table tr td {
+            margin: 5px;
+            padding: 5px;
+            font-size: 10px; } }
+        @media screen and (max-width: 768px) {
+          .main__contents--reservation #form table tr td text {
+            max-width: 50px; } }
+  @media screen and (max-width: 768px) {
+    .main__contents--map {
+      margin: 0 auto; } }
+  .main__contents--map iframe {
+    width: 425px;
+    height: 380px; }
+    @media screen and (max-width: 768px) {
+      .main__contents--map iframe {
+        width: 300px;
+        height: 200px; } }
+  @media screen and (max-width: 768px) {
+    .main__contents--form {
+      margin: 0 auto; } }
+  .main__contents--form p {
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .main__contents--form p {
+        font-size: 12px; } }
+  .main__contents--form table {
+    margin: 30px;
+    padding: 20px; }
+    @media screen and (max-width: 768px) {
+      .main__contents--form table {
+        margin: 15px;
+        padding: 10px; } }
+    .main__contents--form table td {
+      text-align: right;
+      vertical-align: top;
+      margin: 10px;
+      padding: 10px;
+      font-size: 15px; }
+      @media screen and (max-width: 768px) {
+        .main__contents--form table td {
+          margin: 5px;
+          padding: 5px;
+          font-size: 10px; } }
+    .main__contents--form table textarea {
+      resize: none;
+      width: 170px;
+      height: 70px; }
+
+/**********************************
+ menu.html
+**********************************/
+.menu h1 {
+  margin: 15px;
+  padding: 15px;
+  font-size: 30px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .menu h1 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px; } }
+
+.menu__item {
+  width: 85%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  @media screen and (max-width: 768px) {
+    .menu__item {
+      width: 100%;
+      margin: 0 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .menu__item:last-child {
+    border-top: 1px solid #666; }
+  .menu__item--image {
+    width: 500px;
+    height: auto; }
+    @media screen and (max-width: 768px) {
+      .menu__item--image {
+        width: 350px;
+        margin: 0 auto; } }
+    .menu__item--image img {
+      width: 100%; }
+    .menu__item--image .slider {
+      margin: 50px auto 0; }
+      @media screen and (max-width: 768px) {
+        .menu__item--image .slider {
+          margin: 25px auto 0; } }
+      .menu__item--image .slider img {
+        height: auto;
+        width: 100%; }
+      .menu__item--image .slider .slick-slide {
+        margin: 0px 20px;
+        -webkit-transition: all ease-in-out .3s;
+        transition: all ease-in-out .3s;
+        opacity: .2; }
+        @media screen and (max-width: 768px) {
+          .menu__item--image .slider .slick-slide {
+            margin: 0px 10px; } }
+      .menu__item--image .slider .slick-prev:before,
+      .menu__item--image .slider .slick-next:before {
+        color: black; }
+      .menu__item--image .slider .slick-active {
+        opacity: .5; }
+      .menu__item--image .slider .slick-current {
+        opacity: 1; }
+  .menu__item--text {
+    width: 500px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .menu__item--text {
+        width: 100%;
+        margin: 0 auto; } }
+    .menu__item--text h2 {
+      margin: 15px;
+      padding: 15px;
+      font-size: 25px; }
+      @media screen and (max-width: 768px) {
+        .menu__item--text h2 {
+          margin: 5px;
+          padding: 5px;
+          font-size: 15px; } }
+    .menu__item--text p {
+      font-size: 15px;
+      margin: 10px;
+      padding: 10px; }
+      @media screen and (max-width: 768px) {
+        .menu__item--text p {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px; } }
+    .menu__item--text a {
+      margin-top: 60px;
+      font-size: 20px;
+      position: relative;
+      display: inline-block; }
+      @media screen and (max-width: 768px) {
+        .menu__item--text a {
+          margin-top: 30px;
+          font-size: 10px; } }
+    .menu__item--text ul li {
+      margin: 5px;
+      margin-left: 40px;
+      padding: 5px;
+      font-size: 15px;
+      text-align: left; }
+      @media screen and (max-width: 768px) {
+        .menu__item--text ul li {
+          margin-left: 20px;
+          font-size: 10px;
+          text-align: center; } }
+
+/**********************************
+ atmosphere.html
+**********************************/
+.atmosphere h1 {
+  margin: 15px;
+  padding: 15px;
+  font-size: 30px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .atmosphere h1 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px; } }
+
+.atmosphere__item {
+  width: 85%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  @media screen and (max-width: 768px) {
+    .atmosphere__item {
+      width: 100%;
+      margin: 0 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .atmosphere__item--image {
+    width: 500px;
+    height: auto; }
+    @media screen and (max-width: 768px) {
+      .atmosphere__item--image {
+        width: 350px;
+        margin: 0 auto; } }
+    .atmosphere__item--image img {
+      width: 100%; }
+  .atmosphere__item--text {
+    width: 500px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .atmosphere__item--text {
+        width: 100%;
+        margin: 0 auto; } }
+    .atmosphere__item--text p {
+      font-size: 15px;
+      margin: 10px;
+      padding: 10px; }
+      @media screen and (max-width: 768px) {
+        .atmosphere__item--text p {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px; } }
+
+/**********************************
+ reservation.html
+**********************************/
+.reservation h1 {
+  margin: 15px;
+  padding: 15px;
+  font-size: 30px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .reservation h1 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px; } }
+
+.reservation p {
+  text-align: center; }
+
+.reservation__calender {
+  width: 85%;
+  margin: 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #666; }
+  @media screen and (max-width: 768px) {
+    .reservation__calender {
+      width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .reservation__calender #header {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24px; }
+    @media screen and (max-width: 768px) {
+      .reservation__calender #header {
+        font-size: 12px; } }
+  .reservation__calender #calender {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center; }
+  .reservation__calender table {
+    width: 100%;
+    outline: 2px solid #ddd;
+    border-collapse: collapse; }
+  .reservation__calender th {
+    color: #000; }
+    .reservation__calender th:first-child {
+      color: #f00; }
+    .reservation__calender th:last-child {
+      color: #00f; }
+  .reservation__calender th, .reservation__calender td {
+    outline: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .reservation__calender th, .reservation__calender td {
+        padding-top: 5px;
+        padding-bottom: 5px; } }
+  .reservation__calender td:first-child {
+    color: #f00; }
+  .reservation__calender td:last-child {
+    color: #00f; }
+  .reservation__calender td.holiday {
+    color: #f00; }
+  .reservation__calender td.disabled {
+    color: #ccc; }
+  .reservation__calender td.today {
+    background-color: #D98989;
+    color: #fff; }
+  .reservation__calender #next-prev-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .reservation__calender #next-prev-button button {
+      padding: 10px 40px;
+      background-color: #C7AA95;
+      border: 1px solid #C7AA95;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer; }
+      @media screen and (max-width: 768px) {
+        .reservation__calender #next-prev-button button {
+          padding: 5px 20px; } }
+    .reservation__calender #next-prev-button :hover {
+      background-color: #D4BB92;
+      border-color: #D4BB92; }
+  .reservation__calender #prev {
+    float: left; }
+  .reservation__calender #next {
+    float: right; }
+
+.reservation__form {
+  width: 85%;
+  margin: 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #666; }
+  @media screen and (max-width: 768px) {
+    .reservation__form {
+      width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .reservation__form #form table {
+    margin: 0 auto;
+    outline: none;
+    border: none; }
+    .reservation__form #form table tr th {
+      margin: 10px;
+      padding: 10px;
+      color: #000;
+      font-size: 15px;
+      text-align: right; }
+    .reservation__form #form table tr td {
+      outline: none;
+      border: none;
+      margin: 10px;
+      padding: 10px;
+      font-size: 15px;
+      color: #000;
+      text-align: left; }
+      @media screen and (max-width: 768px) {
+        .reservation__form #form table tr td {
+          margin: 5px;
+          padding: 5px;
+          font-size: 10px; } }
+      @media screen and (max-width: 768px) {
+        .reservation__form #form table tr td text {
+          max-width: 50px; } }
+  .reservation__form #button {
+    width: 55px;
+    height: 35px;
+    background-color: #C7AA95;
+    border: 1px solid #C7AA95;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer; }
+
+/**********************************
+ info&access.html
+**********************************/
+.infoAndAccess h1 {
+  margin: 15px;
+  padding: 15px;
+  font-size: 30px;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .infoAndAccess h1 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px; } }
+
+.access {
+  width: 85%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  @media screen and (max-width: 768px) {
+    .access {
+      width: 100%;
+      margin: 0 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .access__text {
+    width: 500px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .access__text {
+        width: 100%;
+        margin: 0 auto; } }
+    .access__text h2 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 25px; }
+      @media screen and (max-width: 768px) {
+        .access__text h2 {
+          margin: 5px;
+          padding: 5px;
+          font-size: 15px; } }
+    .access__text ul li {
+      margin: 5px;
+      margin-left: 40px;
+      padding: 5px;
+      font-size: 15px;
+      text-align: center; }
+      @media screen and (max-width: 768px) {
+        .access__text ul li {
+          margin-left: 20px;
+          font-size: 10px; } }
+  @media screen and (max-width: 768px) {
+    .access__map {
+      margin: 0 auto; } }
+  .access__map iframe {
+    width: 425px;
+    height: 380px; }
+    @media screen and (max-width: 768px) {
+      .access__map iframe {
+        width: 300px;
+        height: 200px; } }
+
+.info {
+  width: 85%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  @media screen and (max-width: 768px) {
+    .info {
+      width: 100%;
+      margin: 0 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .info__text {
+    width: 500px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .info__text {
+        width: 100%;
+        margin: 0 auto; } }
+    .info__text h2 {
+      margin: 10px;
+      padding: 10px;
+      font-size: 25px; }
+      @media screen and (max-width: 768px) {
+        .info__text h2 {
+          margin: 5px;
+          padding: 5px;
+          font-size: 15px; } }
+    .info__text p {
+      font-size: 15px;
+      margin: 5px;
+      padding: 5px; }
+      @media screen and (max-width: 768px) {
+        .info__text p {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px; } }
+  @media screen and (max-width: 768px) {
+    .info__form {
+      margin: 0 auto; } }
+  .info__form p {
+    margin: 5px;
+    padding: 5px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .info__form p {
+        font-size: 12px; } }
+  .info__form table {
+    margin: 20px;
+    padding: 10px; }
+    @media screen and (max-width: 768px) {
+      .info__form table {
+        margin: 10px;
+        padding: 5px; } }
+    .info__form table th {
+      margin: 10px;
+      padding: 10px;
+      color: #000;
+      font-size: 15px;
+      text-align: right; }
+    .info__form table td {
+      text-align: left;
+      vertical-align: top;
+      margin: 10px;
+      padding: 10px;
+      font-size: 15px; }
+      @media screen and (max-width: 768px) {
+        .info__form table td {
+          margin: 5px;
+          padding: 5px;
+          font-size: 10px; } }
+    .info__form table textarea {
+      resize: none;
+      width: 250px;
+      height: 100px; }
+  .info__form #button {
+    width: 55px;
+    height: 35px;
+    background-color: #C7AA95;
+    border: 1px solid #C7AA95;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer; }
+
+/**********************************
+ footer
+**********************************/
+.footer__contents {
+  margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    .footer__contents {
+      width: 100%; } }
+  .footer__contents--sns {
+    margin: 5px;
+    padding: 5px; }
+    .footer__contents--sns ul {
+      margin: 5px;
+      padding: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .footer__contents--sns ul li {
+        margin: 5px;
+        padding: 5px; }
+        .footer__contents--sns ul li a {
+          display: block;
+          width: 40px;
+          height: 40px; }
+          .footer__contents--sns ul li a img {
+            width: 100%;
+            height: 100%; }
+  .footer__contents--copy {
+    margin: 5px;
+    padding: 5px; }
+    .footer__contents--copy p {
+      font-size: 12px;
+      text-align: center; }
+      @media screen and (max-width: 768px) {
+        .footer__contents--copy p {
+          font-size: 10px; } }

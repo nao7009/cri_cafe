@@ -1,0 +1,1180 @@
+/* style.scss */
+@charset "UTF-8";
+@import '_variables.scss';
+
+/******************************
+* 初期設定
+******************************/
+body{
+    margin: 10px;
+    padding: 10px;
+    color:#060606;
+    font-size: 16px;
+    // font-family: sans-serif;
+    background-color: $mainColor;
+    @include mq('max','md') {
+      margin: 5px;
+      padding: 5px;
+    }
+}
+header, footer{
+  background-color: $subColor;
+}
+main{
+  background-color: $thirdColor;
+}
+a{
+    text-decoration: none;
+    color: #060606;
+}
+p{
+  margin: 10px;
+  padding: 10px;
+  font-family: $fontType2;
+  line-height: 2em;
+  @include mq('max','md') {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+header, footer, main, section, div, li, dt, dd{
+    margin: 10px;
+    padding: 10px;
+    font-family: $fontType;
+    @include mq('max','md') {
+      margin: 5px;
+      padding: 5px;
+    }
+}
+
+/******************************
+ header
+******************************/
+.header {
+  @include mq('max','md') {
+  }
+    // h1{
+    //   margin: 10px;
+    //   padding: 10px;
+    //   font-size: 30px;
+    //   font-family:  $fontType;
+    //   text-align: center;
+    //   @include mq('max','md') {
+    //     margin: 5px;
+    //     padding: 5px;
+    //     font-size: 15px;
+    //     text-align: center;
+    //     }
+    // }
+    &__contents{
+      width: 85%;
+      margin: 0 auto;
+      @include mq('max','md') {
+        width: 100%;
+      }
+      &--logo{
+        margin: 0 auto;
+        padding: 5px;
+        width: 140px;
+        height: 140px;
+        @include mq('max','md') {
+          width: 70px;
+          height: 70px;
+        }
+        a{
+          display: block;
+          margin: 5px;
+          padding: 5px;
+          @include mq('max','md') {
+          }
+          img{
+            width: 100%;
+            @include mq('max','md') {
+            }
+          }
+        }  
+      }
+      &--menu{
+        width: 100%;
+        @include mq('max','md') {
+        }
+        ul{
+          display: flex;
+          justify-content: space-around;
+          @include mq('max','md') {
+            margin: 5px;
+            padding: 5px;
+          }
+          li{
+            font-size: 25px;
+            @include mq('max','md') {
+              font-size: 15px;
+            }
+            a{
+              margin: 5px;
+              padding: 5px;
+              position: relative;
+              display: inline-block;
+              text-decoration: none;
+              @include mq('max','md') {
+              }
+              &:after{
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: #666;
+                transform: scale(0, 1);
+                transform-origin: center top;
+                transition: transform .3s;
+                @include mq('max','md') {
+                } 
+              }
+              &:hover:after {
+                  transform: scale(1, 1);
+                  @include mq('max','md') {
+                  }
+              }
+            }
+          }
+        }
+      }
+      &--slide{
+        width: 80%;
+        margin: 20px auto;
+        @include mq('max','md') {
+          width: 100%;
+          margin: 10px auto;
+        }
+        img{
+          height: auto;
+          width: 100%;
+          @include mq('max','md') {
+          }
+        }
+        .slick-slide {
+          margin: 0px 20px;
+          transition: all ease-in-out .3s;
+          opacity: .2;
+          @include mq('max','md') {
+            margin: 0px 10px;
+          }
+        }
+        .slick-prev:before,
+        .slick-next:before {
+          color: black;
+          @include mq('max','md') {
+          }
+        }
+        .slick-active {
+          opacity: .5;
+          @include mq('max','md') {
+          }
+        }
+        .slick-current {
+          opacity: 1;
+          @include mq('max','md') {
+          }
+        }
+      }
+    }
+}
+
+/**********************************
+ index.html
+**********************************/
+.main{
+  @include mq('max','md') {
+  }
+  h1{
+    margin: 15px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    @include mq('max','md') {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+
+  &__contents{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    @include mq('max','md') {
+      width: 100%;
+      margin: 0 auto;
+      flex-direction:column;
+    }
+    &:first-child{
+      border-bottom: 1px solid #666;
+    }
+    &--image{
+      width: 500px;
+      height: auto;
+      @include mq('max','md') {
+        width: 350px;
+        margin: 0 auto;
+      }
+      img{
+        width: 100%;
+        @include mq('max','md') {
+        }
+      }
+      .slider{
+        margin: 50px auto 0;
+        @include mq('max','md') {
+          margin: 25px auto 0;
+        }
+        img{
+          height: auto;
+          width: 100%;
+          @include mq('max','md') {
+          }
+        }
+        .slick-slide {
+          margin: 0px 20px;
+          transition: all ease-in-out .3s;
+          opacity: .2;
+          @include mq('max','md') {
+            margin: 0px 10px;
+          }
+        }
+        .slick-prev:before,
+        .slick-next:before {
+          color: black;
+          @include mq('max','md') {
+          }
+        }
+        .slick-active {
+          opacity: .5;
+          @include mq('max','md') {
+          }
+        }
+        .slick-current {
+          opacity: 1;
+          @include mq('max','md') {
+          }
+        }
+      }     
+    }
+    &--text{
+      width: 500px;
+      text-align: center;
+      @include mq('max','md') {
+        width: 100%;
+        margin: 0 auto;
+      }
+      h2{
+        margin: 15px;
+        padding: 15px;
+        font-size: 25px;
+        @include mq('max','md') {
+          margin: 5px;
+          padding: 5px;
+          font-size: 15px;
+        }
+      }
+      p{
+        font-size: 15px;
+        margin: 10px;
+        padding: 10px;
+        @include mq('max','md') {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px;
+        }
+      }
+      a{
+        margin-top: 60px;
+        font-size: 20px;
+        position: relative;
+        display: inline-block;
+        @include mq('max','md') {
+          margin-top: 30px;
+          font-size: 10px;
+        }
+        &:after{
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #666;
+          transform: scale(0, 1);
+          transform-origin: center top;
+          transition: transform .3s;
+          @include mq('max','md') {
+          } 
+        }
+        &:hover:after {
+            transform: scale(1, 1);
+            @include mq('max','md') {
+            }
+        }
+      }
+      ul{
+        @include mq('max','md') {
+        }
+        li{
+          margin: 5px;
+          margin-left: 40px;
+          padding: 5px;
+          font-size: 15px;
+          text-align: left;
+          @include mq('max','md') {
+            margin-left: 20px;
+            font-size: 10px;
+            text-align: center;
+          }
+        }
+      }
+      img{
+        @include mq('max','md') {
+          width: 40px;
+          height: 40px;
+        }
+      }    
+    }
+    &--reservation{
+      margin: 0 auto;
+      color: #666;
+      @include mq('max','md') {
+      }
+      p{
+        text-align: center;
+        @include mq('max','md') {
+        }
+      }
+      #header{
+        text-align: center;
+        font-size: 24px;
+        width: 100%;
+        margin: 1rem 0 0;
+        @include mq('max','md') {
+          font-size: 12px;
+        }
+      }
+      #calender{
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        @include mq('max','md') {
+        }
+      }
+      table{
+        outline: 2px solid #ddd;
+        border-collapse: collapse;
+        width: 100%;
+        @include mq('max','md') {
+        }
+      }
+      th{
+        color: #000;
+        @include mq('max','md') {
+        }
+      }
+      th,td{
+        outline: 1px solid #ddd;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        @include mq('max','md') {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+      td{
+        &:first-child{
+          color: #f00;
+          @include mq('max','md') {
+          }
+        }
+        &:last-child{
+          color: #00f;
+          @include mq('max','md') {
+          }
+        }
+        &.holiday{
+            color: #f00;
+            @include mq('max','md') {
+            }
+        }
+        &.disabled{
+          color: #ccc;
+          @include mq('max','md') {
+          }
+        }
+        &.today{
+          background-color: #D65E72;
+          color: #fff;
+          @include mq('max','md') {
+          }
+        }
+      }
+      #next-prev-button{
+        display: flex;
+        justify-content: space-around;
+        @include mq('max','md') {
+        }
+        button{
+          cursor: pointer;
+          background: #B78D4A;
+          color: #fff;
+          border: 1px solid #B78D4A;
+          border-radius: 4px;
+          font-size: 1rem;
+          padding: 10px 40px;
+          @include mq('max','md') {
+            padding: 5px 20px;
+          }
+        }
+        :hover{
+          background-color: #D4BB92;
+          border-color: #D4BB92;
+          @include mq('max','md') {
+          }
+        }
+      }
+      #prev{
+        float: left;
+        @include mq('max','md') {
+        }
+      }
+      #next{
+        float: right;
+        @include mq('max','md') {
+        }
+      }
+      #form{
+        @include mq('max','md') {
+          width: 100%;
+          margin: 0 auto;
+        }
+        table{
+          outline: none;
+          border: none; 
+          tr{
+            td{
+              outline: none;
+              border: none; 
+              margin: 10px;
+              padding: 10px;
+              font-size: 15px;
+              color: #000;
+              text-align: left;
+              @include mq('max','md') {
+                margin: 5px;
+                padding: 5px;
+                font-size: 10px;
+              }
+              text{
+                @include mq('max','md') {
+                  max-width: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &--map{
+      @include mq('max','md') {
+        margin: 0 auto;
+      }
+      iframe{
+        width: 425px;
+        height: 380px;
+        @include mq('max','md') {
+          width: 300px;
+          height: 200px;
+        }
+      }
+    }
+    &--form{
+      @include mq('max','md') {
+        margin: 0 auto;
+      }
+      p{
+        text-align: center;
+        @include mq('max','md') {
+          font-size: 12px;
+        }
+      }
+      table{
+        margin: 30px;
+        padding: 20px;
+        @include mq('max','md') {
+          margin: 15px;
+          padding: 10px;
+        }
+        td{
+          text-align: right;
+          vertical-align: top;
+          margin: 10px;
+          padding: 10px;
+          font-size: 15px;
+          @include mq('max','md') {
+            margin: 5px;
+            padding: 5px;
+            font-size: 10px;
+          }
+        }
+        textarea{
+          resize: none;
+          width: 170px;
+          height: 70px;
+          @include mq('max','md') {
+          }
+        }
+      }
+    }  
+  }
+}
+
+/**********************************
+ menu.html
+**********************************/
+.menu{
+  @include mq('max','md') {
+  }
+  h1{
+    margin: 15px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    @include mq('max','md') {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+  &__item{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    @include mq('max','md') {
+      width: 100%;
+      margin: 0 auto;
+      flex-direction:column;
+    }
+    &:last-child{
+      border-top: 1px solid #666;
+    }
+    &--image{
+      width: 500px;
+      height: auto;
+      @include mq('max','md') {
+        width: 350px;
+        margin: 0 auto;
+      }
+      img{
+        width: 100%;
+        @include mq('max','md') {
+        }
+      }
+      .slider{
+        margin: 50px auto 0;
+        @include mq('max','md') {
+          margin: 25px auto 0;
+        }
+        img{
+          height: auto;
+          width: 100%;
+          @include mq('max','md') {
+          }
+        }
+        .slick-slide {
+          margin: 0px 20px;
+          transition: all ease-in-out .3s;
+          opacity: .2;
+          @include mq('max','md') {
+            margin: 0px 10px;
+          }
+        }
+        .slick-prev:before,
+        .slick-next:before {
+          color: black;
+          @include mq('max','md') {
+          }
+        }
+        .slick-active {
+          opacity: .5;
+          @include mq('max','md') {
+          }
+        }
+        .slick-current {
+          opacity: 1;
+          @include mq('max','md') {
+          }
+        }
+      }     
+    }
+    &--text{
+      width: 500px;
+      text-align: center;
+      @include mq('max','md') {
+        width: 100%;
+        margin: 0 auto;
+      }
+      h2{
+        margin: 15px;
+        padding: 15px;
+        font-size: 25px;
+        @include mq('max','md') {
+          margin: 5px;
+          padding: 5px;
+          font-size: 15px;
+        }
+      }
+      p{
+        font-size: 15px;
+        margin: 10px;
+        padding: 10px;
+        @include mq('max','md') {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px;
+        }
+      }
+      a{
+        margin-top: 60px;
+        font-size: 20px;
+        position: relative;
+        display: inline-block;
+        @include mq('max','md') {
+          margin-top: 30px;
+          font-size: 10px;
+        }
+      }
+      ul{
+        @include mq('max','md') {
+        }
+        li{
+          margin: 5px;
+          margin-left: 40px;
+          padding: 5px;
+          font-size: 15px;
+          text-align: left;
+          @include mq('max','md') {
+            margin-left: 20px;
+            font-size: 10px;
+            text-align: center;
+          }
+        }
+      }    
+    } 
+  }
+}
+
+/**********************************
+ atmosphere.html
+**********************************/
+.atmosphere{
+  @include mq('max','md') {
+  }
+  h1{
+    margin: 15px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    @include mq('max','md') {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+  &__item{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    @include mq('max','md') {
+      width: 100%;
+      margin: 0 auto;
+      flex-direction:column;
+    }
+    &--image{
+      width: 500px;
+      height: auto;
+      @include mq('max','md') {
+        width: 350px;
+        margin: 0 auto;
+      }
+      img{
+        width: 100%;
+        @include mq('max','md') {
+        }
+      }   
+    }
+    &--text{
+      width: 500px;
+      text-align: center;
+      @include mq('max','md') {
+        width: 100%;
+        margin: 0 auto;
+      }
+      p{
+        font-size: 15px;
+        margin: 10px;
+        padding: 10px;
+        @include mq('max','md') {
+          font-size: 10px;
+          margin: 5px;
+          padding: 5px;
+        }
+      }   
+    } 
+  }
+}
+
+/**********************************
+ reservation.html
+**********************************/
+.reservation{
+  @include mq('max','md') {
+  }
+  h1{
+    margin: 15px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    @include mq('max','md') {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+  p{
+    text-align: center;
+    @include mq('max','md') {
+    }
+  }
+  &__calender{
+    width: 85%;
+    margin: 0 auto;
+    flex: 1;
+    color: #666;
+    @include mq('max','md') {
+      width: 100%;
+      flex-direction: column;
+    }
+    #header{
+      margin: 0 auto;
+      text-align: center;
+      font-size: 24px;
+      @include mq('max','md') {
+        font-size: 12px;
+      }
+    }
+    #calender{
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      @include mq('max','md') {
+      }
+    }
+    table{
+      width: 100%;
+      outline: 2px solid #ddd;
+      border-collapse: collapse;
+      @include mq('max','md') {
+      }
+    }
+    th{
+      color: #000;
+      @include mq('max','md') {
+      }
+      &:first-child{
+        color: #f00;
+        @include mq('max','md') {
+        }
+      }
+      &:last-child{
+        color: #00f;
+        @include mq('max','md') {
+        }
+      }
+    }
+    th,td{
+      outline: 1px solid #ddd;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+      @include mq('max','md') {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+    td{
+      &:first-child{
+        color: #f00;
+        @include mq('max','md') {
+        }
+      }
+      &:last-child{
+        color: #00f;
+        @include mq('max','md') {
+        }
+      }
+      &.holiday{
+          color: #f00;
+          @include mq('max','md') {
+          }
+      }
+      &.disabled{
+        color: #ccc;
+        @include mq('max','md') {
+        }
+      }
+      &.today{
+        background-color: #D98989;
+        color: #fff;
+        @include mq('max','md') {
+        }
+      }
+    }
+    #next-prev-button{
+      display: flex;
+      justify-content: space-around;
+      @include mq('max','md') {
+      }
+      button{
+        padding: 10px 40px;
+        background-color: #C7AA95;
+        border: 1px solid #C7AA95;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+        @include mq('max','md') {
+          padding: 5px 20px;
+        }
+      }
+      :hover{
+        background-color: #D4BB92;
+        border-color: #D4BB92;
+        @include mq('max','md') {
+        }
+      }
+    }
+    #prev{
+      float: left;
+      @include mq('max','md') {
+      }
+    }
+    #next{
+      float: right;
+      @include mq('max','md') {
+      }
+    } 
+  }
+  &__form{
+    width: 85%;
+    margin: 0 auto;
+    flex: 1;
+    color: #666;
+    @include mq('max','md') {
+      width: 100%;
+      flex-direction: column;
+    }
+    #form{
+      @include mq('max','md') {
+      }
+      table{
+        margin: 0 auto;
+        outline: none;
+        border: none; 
+        tr{
+          th{
+            margin: 10px;
+            padding: 10px;
+            color: #000;
+            font-size: 15px;
+            text-align: right;
+            @include mq('max','md') {
+            }
+          }
+          td{
+            outline: none;
+            border: none;
+            margin: 10px;
+            padding: 10px;
+            font-size: 15px;
+            color: #000;
+            text-align: left;
+            @include mq('max','md') {
+              margin: 5px;
+              padding: 5px;
+              font-size: 10px;
+            }
+            text{
+              @include mq('max','md') {
+                max-width: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+    #button{
+      width: 55px;
+      height: 35px;
+      background-color: #C7AA95;
+      border: 1px solid #C7AA95;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+/**********************************
+ info&access.html
+**********************************/
+.infoAndAccess{
+  @include mq('max','md') {
+  }
+  h1{
+    margin: 15px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    @include mq('max','md') {
+      margin: 10px;
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+}
+.access{
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  @include mq('max','md') {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction:column;
+  }
+  &__text{
+    width: 500px;
+    text-align: center;
+    @include mq('max','md') {
+      width: 100%;
+      margin: 0 auto;
+    }
+    h2{
+      margin: 10px;
+      padding: 10px;
+      font-size: 25px;
+      @include mq('max','md') {
+        margin: 5px;
+        padding: 5px;
+        font-size: 15px;
+      }
+    }
+    ul{
+      @include mq('max','md') {
+      }
+      li{
+        margin: 5px;
+        margin-left: 40px;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+        @include mq('max','md') {
+          margin-left: 20px;
+          font-size: 10px;
+        }
+      }
+    }   
+  }
+  &__map{
+    @include mq('max','md') {
+      margin: 0 auto;
+    }
+    iframe{
+      width: 425px;
+      height: 380px;
+      @include mq('max','md') {
+        width: 300px;
+        height: 200px;
+      }
+    }
+  }
+}
+.info{
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  @include mq('max','md') {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction:column;
+  }
+  &__text{
+    width: 500px;
+    text-align: center;
+    @include mq('max','md') {
+      width: 100%;
+      margin: 0 auto;
+    }
+    h2{
+      margin: 10px;
+      padding: 10px;
+      font-size: 25px;
+      @include mq('max','md') {
+        margin: 5px;
+        padding: 5px;
+        font-size: 15px;
+      }
+    }
+    p{
+      font-size: 15px;
+      margin: 5px;
+      padding: 5px;
+      @include mq('max','md') {
+        font-size: 10px;
+        margin: 5px;
+        padding: 5px;
+      }
+    }   
+  }
+  &__form{
+    @include mq('max','md') {
+      margin: 0 auto;
+    }
+    p{
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      @include mq('max','md') {
+        font-size: 12px;
+      }
+    }
+    table{
+      margin: 20px;
+      padding: 10px;
+      @include mq('max','md') {
+        margin: 10px;
+        padding: 5px;
+      }
+      th{
+        margin: 10px;
+        padding: 10px;
+        color: #000;
+        font-size: 15px;
+        text-align: right;
+        @include mq('max','md') {
+        }
+      }
+      td{
+        text-align: left;
+        vertical-align: top;
+        margin: 10px;
+        padding: 10px;
+        font-size: 15px;
+        @include mq('max','md') {
+          margin: 5px;
+          padding: 5px;
+          font-size: 10px;
+        }
+        text{
+          @include mq('max','md') {
+            // max-width: 50px;
+          }
+        }
+      }
+      textarea{
+        resize: none;
+        width: 250px;
+        height: 100px;
+        @include mq('max','md') {
+        }
+      }
+    }
+    #button{
+      width: 55px;
+      height: 35px;
+      background-color: #C7AA95;
+      border: 1px solid #C7AA95;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }  
+}
+
+/**********************************
+ footer
+**********************************/
+.footer{
+  @include mq('max','md') {
+  }
+  &__contents{
+    margin: 0 auto;
+    @include mq('max','md') {
+      width: 100%;
+    }
+    &--sns{
+      margin: 5px;
+      padding: 5px;
+      @include mq('max','md') {
+      }
+      ul{
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        @include mq('max','md') {
+        }
+        li{
+          margin: 5px;
+          padding: 5px;
+          @include mq('max','md') {
+          }
+          a{
+            display: block;
+            width: 40px;
+            height: 40px;
+            @include mq('max','md') {
+            }
+            img{
+              width: 100%;
+              height: 100%;
+              @include mq('max','md') {
+              }        
+            }
+          }
+        }
+      }    
+    }
+    &--copy{
+      margin: 5px;
+      padding: 5px;
+      @include mq('max','md') {
+      }
+      p{
+        font-size: 12px;
+        text-align: center;
+        @include mq('max','md') {
+          font-size: 10px;
+        } 
+      }    
+    } 
+  }
+}

@@ -1,0 +1,39 @@
+/* _variables.scss */
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+
+$breakpoints: (
+  'sm': 340,
+  'md': 768,
+  'lg': 1215,
+) !default;
+@mixin mq($mq, $bp1:lg, $bp2:lg){
+  $w1    : map-get($breakpoints, $bp1);
+  $w2    : map-get($breakpoints, $bp2);
+  $min1  : 'min-width: #{($w1+1)}px';
+  $max1  : 'max-width: #{($w1)}px';
+  $min2  : 'min-width: #{($w1+1)}px';
+  $max2  : 'max-width: #{($w2)}px';
+
+  @if $mq == min {
+    @media screen and ($min1) {
+      @content;
+    }
+  }
+  @else if $mq == max {
+    @media screen and ($max1) {
+      @content;
+    }
+  }
+  @else if $mq == min-max {
+    @media screen and ($min2) and ($max2) {
+      @content;
+    }
+  }
+}
+
+$mainColor: #D9D1B0;
+$subColor: #EBE8D3;
+
+$fontType: 'Slabo 27px', serif;
+$fontType2: 'Shippori Mincho B1', serif;
