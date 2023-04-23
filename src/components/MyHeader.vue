@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__contents">
       <div class="header__contents--logo">
-        <a href="/"><img src="../assets/images/logo.png"></a>
+        <router-link to="/"><img src="../assets/images/logo.png"></router-link>
       </div>
       <div class="header__contents--menu">
         <ul>
@@ -35,24 +35,26 @@ export default {
       &--logo{
         margin: 0 auto;
         padding: 5px;
-        width: 140px;
-        height: 140px;
+        width: 120px;
+        height: 120px;
+        display: block;
         @include mq('max','md') {
           width: 100px;
           height: 100px;
         }
-        a{
-          display: block;
-          margin: 5px;
-          padding: 5px;
-          @include mq('max','md') {
-          }
-          img{
+        // a{
+        //   display: block;
+        //   margin: 5px;
+        //   padding: 5px;
+        //   @include mq('max','md') {
+        //   }
+
+        // } 
+        img{
             width: 100%;
             @include mq('max','md') {
             }
-          }
-        }  
+          } 
       }
       &--menu{
         width: 85%;

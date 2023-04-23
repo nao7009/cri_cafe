@@ -9,14 +9,14 @@
       <div class="main__about--text">
         <h2>Food</h2>
         <p>看板メニューのパンケーキをはじめとしたスイーツや、<br>ランチプレートなどをご用意しています。<br>朝食やカフェタイムのリフレッシュにいかがでしょうか。</p>
-        <a href="/menu">more</a>
+        <router-link to="/menu">more</router-link>
       </div>
     </div>
     <div class="main__about">
       <div class="main__about--text">
         <h2>Drink</h2>
         <p>豆からこだわって丁寧に淹れたコーヒーや、<br>季節限定のドリンクなどをご用意しています。</p>
-        <a href="/menu">more</a>
+        <router-link to="/menu">more</router-link>
       </div>
       <div class="main__about--image">
         <img src="../assets/images/drink.jpg">
