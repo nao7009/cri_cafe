@@ -39,14 +39,24 @@ export default{
         { id: 6, value: '土' }
         ],
       startDay: new Date(this.date().getFullYear(), this.date().getMonth(), 1).getDay(),
+      // 今月月初の日付取得
       startDate: new Date(this.date().getFullYear(), this.date().getMonth(), 1),
-      currentMonth: this.date().getMonth(),
-      currentYear: this.date().getFullYear(),
+      // 先月末の日付取得
       lastMonthEndDate: new Date(this.date().getFullYear(), this.date().getMonth(), 0).getDate(),
-      thisMonthEndDate: new Date(this.date().getFullYear(), this.date().getMonth()+1, 0).getDate()   
+      currentMonth: this.date().getMonth(),
+      currentYear: this.date().getFullYear()
       }
   },
   computed: {
+    // 現在の年・月と連動して動くよう、メソッドを定義
+    // 今月末の日付取得
+    thisMonthEndDate(){
+      return new Date(this.currentYear, this.currentMonth+1, 0)
+    },
+    // 来月月初の日付取得
+    nextMonthStartDate(){
+      return new Date(this.currentYear, this.currentMonth+1, 1)
+    },
     getYearAndMonth(){
       const month = this.currentMonth + 1
       const result = this.currentYear + '年' + month + '月'
@@ -93,21 +103,19 @@ export default{
       return this.date().getMonth()
     },
     //不要？
-    endDate () {
-      return new Date(this.year(), this.month(), 0)
-    },
-    //不要？
-    endDayCount () {
-      return this.endDate().getDay()
-    },
+    // endDate () {
+    //   return new Date(this.year(), this.month(), 0)
+    // },
+    // //不要？
+    // endDayCount () {
+    //   return this.endDate().getDay()
+    // },
     renderCalendar () {
       const startDay = this.startDay
       const currentDate = this.startDate
-      const lastMonthEndDate = this.lastMonthEndDate
-      const thisMonthEndDate = this.thisMonthEndDate
+      const nextMonthStartDay = this.nextMonthStartDate
       const calendars = []
 
-      let lastDateCount = startDay - 1
       for (let i = 0; i < 6; i++) {
         const weekRow = []
         for (let day = 0; day < 7; day++) {
@@ -118,21 +126,11 @@ export default{
             })
             currentDate.setDate(currentDate.getDate() + 1)
 
-            //当月の最終日以降を空白にする
-            if(currentDate.getDate() == thisMonthEndDate){
-              // for(let j = day+1; j < 7; j++){
-              //   weekRow[j] = ''
-              // }
-              console.log(123)
+            //当月の最終日以降を空白にする(現在取得している日付が来月月初の日付より大きくなった場合)
+            if(currentDate > nextMonthStartDay){
               weekRow[day] = ''
             }
           } else {
-            //前月の日付・1日の表示
-            weekRow.push({
-              date: lastMonthEndDate - lastDateCount
-            })
-            lastDateCount--
-
             //前月分の日付を空白にする
             weekRow[day] = ''
           }
@@ -193,7 +191,6 @@ button{
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
-    border-bottom: 1px solid #ddd;
     border-collapse: collapse;
     @include mq('max','md') {
     }
