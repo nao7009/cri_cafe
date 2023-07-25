@@ -47,6 +47,9 @@ export default {
           padding: 5px;
           @include mq('max','md') {
           }
+          @include mq('max','sm') {
+            margin: 0;
+          }
           a{
             display: block;
             width: 30px;
@@ -54,6 +57,10 @@ export default {
             @include mq('max','md') {
               width: 25px;
               height: 25px;
+            }
+            @include mq('max','sm') {
+              width: 20px;
+              height: 20px;
             }
             img{
               width: 100%;

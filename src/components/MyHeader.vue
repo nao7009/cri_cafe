@@ -42,14 +42,10 @@ export default {
           width: 100px;
           height: 100px;
         }
-        // a{
-        //   display: block;
-        //   margin: 5px;
-        //   padding: 5px;
-        //   @include mq('max','md') {
-        //   }
-
-        // } 
+        @include mq('max','sm') {
+          width: 70px;
+          height: 70px;
+        }
         img{
             width: 100%;
             @include mq('max','md') {
@@ -73,6 +69,9 @@ export default {
             font-size: 20px;
             @include mq('max','md') {
               font-size: 15px;
+            }
+            @include mq('max','sm') {
+              font-size: 12px;
             }
             a{
               position: relative;

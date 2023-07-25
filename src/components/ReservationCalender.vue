@@ -102,14 +102,6 @@ export default{
     month () {
       return this.date().getMonth()
     },
-    //不要？
-    // endDate () {
-    //   return new Date(this.year(), this.month(), 0)
-    // },
-    // //不要？
-    // endDayCount () {
-    //   return this.endDate().getDay()
-    // },
     renderCalendar () {
       const startDay = this.startDay
       const currentDate = this.startDate
@@ -153,6 +145,10 @@ export default{
     @include mq('max','md') {
       margin: 30px auto;
   }
+  @include mq('max','sm') {
+      margin: 0 auto;
+      width: 85%;
+  }
 }
 #header {
     margin: 0 auto;
@@ -176,6 +172,9 @@ button{
     cursor: pointer;
     @include mq('max','md') {
         padding: 5px 20px;
+    }
+    @include mq('max','sm') {
+        padding: 5px 15px;
     }
     &:hover{
         background-color: #D4BB92;

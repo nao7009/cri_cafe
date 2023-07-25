@@ -81,10 +81,16 @@ export default {
     align-items: center;
     justify-content: center;
     flex: 1;
-    @include mq('max','md') {
+    @include mq('max','lg') {
       width: 100%;
       margin: 0 auto;
       flex-direction:column;
+    }
+    @include mq('max','mg') {
+      padding: 20px;
+    }
+    @include mq('max','sm') {
+      padding: 20px;
     }
     &:last-child{
       border-top: 1px solid #999;
@@ -103,7 +109,11 @@ export default {
       @include mq('max','md') {
         width: 35px;
         height: 35px;
-    }
+      }
+      @include mq('max','sm') {
+        width: 20px;
+        height: 20px;
+      }
     }
     h2{
       margin: 10px;
@@ -113,6 +123,9 @@ export default {
         margin: 5px;
         padding: 5px;
         font-size: 20px;
+      }
+      @include mq('max','sm') {
+        font-size: 15px;
       }
     }
     ul{
@@ -124,6 +137,10 @@ export default {
         @include mq('max','md') {
           margin-left: 20px;
           font-size: 12px;
+        }
+        @include mq('max','sm') {
+          margin-left: 20px;
+          font-size: 10px;
         }
       }
     }   
@@ -189,6 +206,10 @@ export default {
             height:25px;
             @include mq('max','md') {
             }
+            @include mq('max','sm') {
+              width:150px;
+              height:20px;
+            }
         }
       }
       textarea{
@@ -198,6 +219,10 @@ export default {
         width: 250px;
         height: 100px;
         @include mq('max','md') {
+        }
+        @include mq('max','sm') {
+          width: 150px;
+          height: 80px;
         }
       }
     }
@@ -209,6 +234,10 @@ export default {
       border-radius: 4px;
       color: #fff;
       cursor: pointer;
+      @include mq('max','sm') {
+        width: 40px;
+        height: 25px;
+      }
     }
   } 
 }

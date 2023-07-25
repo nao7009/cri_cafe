@@ -14,7 +14,7 @@
                   日付：
                 </th>
                 <td>
-                  <input type="date" name="name">
+                  <input type="date" name="date">
                 </td>
                 <th>
                   時間：
@@ -51,7 +51,7 @@
                   <input type="text" name="name">
                 </td>
                 <th>
-                フリガナ：
+                カナ：
                 </th>
                 <td colspan="2">
                   <input type="text" name="name">
@@ -59,13 +59,13 @@
               </tr>
               <tr>
                 <th>
-                  メールアドレス：
+                  メール：
                 </th>
                 <td>
                   <input type="text" name="mail">
                 </td>
                 <th>
-                  電話番号：
+                  電話：
                 </th>
                 <td colspan="2">
                   <input type="text" name="tel">                                        
@@ -116,7 +116,7 @@ export default {
     margin: 0 auto;
     flex: 1;
     color: #666;
-    @include mq('max','md') {
+    @include mq('max','lg') {
       width: 100%;
       flex-direction: column;
     }
@@ -136,6 +136,11 @@ export default {
             text-align: right;
             @include mq('max','md') {
               font-size: 12px;
+            }
+            @include mq('max','sm') {
+              margin: 5px;
+              padding: 5px;
+              font-size: 10px;
             }
           }
           td{
@@ -160,6 +165,9 @@ export default {
               @include mq('max','md') {
                 width:80px;
               }
+              @include mq('max','sm') {
+                width: 50px;
+              }
             }
             input{
               background-color: #fff;
@@ -167,8 +175,15 @@ export default {
               width:250px;
               height:25px;
               text-align: center;
+              @include mq('min-max','md','lg') {
+                width:150px;
+              }
               @include mq('max','md') {
                 width:150px;
+              }
+              @include mq('max','sm') {
+                width:80px;
+                height: 20px;
               }
             }
           }
@@ -183,6 +198,10 @@ export default {
       border-radius: 4px;
       color: #fff;
       cursor: pointer;
+      @include mq('max','sm') {
+          width:40px;
+          height: 20px;
+        }
     }
   }
 }

@@ -28,7 +28,7 @@ export default{
 .carousel{
   width: 85%;
   margin: 30px auto 0;
-  @include mq('max','md') {
+  @include mq('max','lg') {
     margin: 15px auto 0;
     width: 100%;
   }
@@ -36,8 +36,14 @@ export default{
 .VueCarousel{
   margin: 0 auto;
   width: 800px;
+  @include mq('min-max','md','lg') {
+    width: 600px;
+  }
   @include mq('max','md') {
     width: 500px;
+  }
+  @include mq('max','sm') {
+    width: 300px;
   }
   img{
     width: 100%;

@@ -58,6 +58,10 @@ export default {
     justify-content: center;
     align-items: center;
     flex: 1;
+    @include mq('min-max','md','lg') {
+      margin: 30px auto;
+      padding: 30px;
+    }
     @include mq('max','md') {
       width: 100%;
       padding: 20px;
@@ -72,6 +76,10 @@ export default {
       height: auto;
       @include mq('max','md') {
         width: 250px;
+        margin: 10px auto;
+      }
+      @include mq('max','sm') {
+        width: 200px;
         margin: 10px auto;
       }
       img{
